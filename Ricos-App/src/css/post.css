@@ -1,0 +1,80 @@
+.container-post {
+    border: 1px solid gainsboro;
+    width: 50%;
+    margin: 16px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*.container-post > div {
+    border: 1px solid gray;
+}*/
+
+.post-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.post-header>div {
+    display: flex;
+}
+
+.post-header-left {
+    margin-left: 8px;
+}
+
+.post-header-center {
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+.post-header-right {
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.post-recipe-title {
+    font-size: large;
+}
+
+.post-author {
+    font-size: small;
+}
+
+.post-body {
+    border-bottom: 1px solid gainsboro;
+}
+
+.post-img-container {
+    margin: 8px auto 8px auto;
+    max-height: 500px;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.post-img {
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.post-footer {
+    padding: 16px;
+}
+
+.post-actions > * {
+    margin-right: 12px;
+}
+
+.post-likes {
+    margin-top: 8px;
+}
+
+.post-description {
+    margin-top: 8px;
+}

@@ -1,20 +1,20 @@
-import logo from '../img/Logo.png';
+import logo from '../img/logo.png';
 import SearchBar from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmile } from '@fortawesome/free-solid-svg-icons'
 import '../css/header.css';
 
-const Header = () =>{
-    return(
+const Header = () => {
+    return (
         <div class="container-head">
             <div>
-                <img id="logo-img"src={logo} alt="Logo!"/>
+                <img id="logo-img" src={logo} alt="Logo!" />
             </div>
             <div>
-                <SearchBar/>
+                <SearchBar />
             </div>
             <div>
-                <FontAwesomeIcon icon={faSmile} size="2x"/>
+                <FontAwesomeIcon icon={faSmile} size="2x" />
             </div>
         </div>
     )
