@@ -29,6 +29,7 @@ const Header = () => {
                 <a href="/">
                     <FontAwesomeIcon icon={faUserCircle} size="lg"/>
                 </a>
+            </div>
           </div>
         </div>
     )
