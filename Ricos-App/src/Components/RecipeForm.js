@@ -1,5 +1,6 @@
 import EditableList from "./EditableList";
 import EditableTable from "./EditableTable";
+import "../css/recipe-form.css";
 const RecipeForm = () => {
   return (
     <div className="recipe-form">

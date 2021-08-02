@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import "../css/editable-table.css";
 
 const EditableTable = () => {
-  const [inputList, setInputList] = useState([
-    { ingredients: "", quantity: "" },
-  ]);
+  const [inputList, setInputList] = useState([]);
+
+  const [inputItem, setItem] = useState({ ingredients: "", quantity: "" });
+
+  const isEmpty = (string) => string.trim() === "" || !string.trim();
 
   // handle input change
-  const handleInputChange = (e, index) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    const list = [...inputList];
-    list[index][name] = value;
-    setInputList(list);
+    const item = { ...inputItem };
+    item[name] = value;
+    setItem(item);
   };
 
   // handle click event of the Remove button
@@ -22,40 +25,51 @@ const EditableTable = () => {
 
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { ingredients: "", quantity: "" }]);
+    if (!isEmpty(inputItem.ingredients) && !isEmpty(inputItem.quantity)) {
+      setInputList([...inputList, inputItem]);
+    }
   };
 
   return (
     <div className="App">
+      <div className="table-title">
+        <div className="table-items">ingredients</div>
+        <div className="table-items">quantity</div>
+      </div>
       {inputList.map((x, i) => {
         return (
-          <div className="box">
-            <input
-              name="ingredients"
-              placeholder="ingredients"
-              value={x.ingredients}
-              onChange={(e) => handleInputChange(e, i)}
-            />
-            <input
-              className="ml10"
-              name="quantity"
-              placeholder="Enter quantity"
-              value={x.quantity}
-              onChange={(e) => handleInputChange(e, i)}
-            />
+          <div className="table-title">
+            <div className="table-items">{x.ingredients}</div>
+            <div className="table-items">{x.quantity}</div>
             <div className="btn-box">
-              {inputList.length !== 1 && (
-                <button className="mr10" onClick={() => handleRemoveClick(i)}>
-                  Remove
-                </button>
-              )}
-              {inputList.length - 1 === i && (
-                <button onClick={handleAddClick}>Add</button>
-              )}
+              <button
+                className="remove-button"
+                onClick={() => handleRemoveClick(i)}
+              >
+                Remove
+              </button>
             </div>
           </div>
         );
       })}
+      <div className="box">
+        <input
+          name="ingredients"
+          placeholder="ingredients"
+          value={inputItem.ingredients}
+          onChange={(e) => handleInputChange(e)}
+        />
+        <input
+          className="ml10"
+          name="quantity"
+          placeholder="Enter quantity"
+          value={inputItem.quantity}
+          onChange={(e) => handleInputChange(e)}
+        />
+        <div>
+          <button onClick={handleAddClick}>Add</button>
+        </div>
+      </div>
     </div>
   );
 };
