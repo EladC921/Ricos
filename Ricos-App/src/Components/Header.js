@@ -5,7 +5,6 @@ import { faHospital } from '@fortawesome/free-regular-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 import { faCompass } from '@fortawesome/free-regular-svg-icons'
-
 import '../css/header.css';
 
 const Header = () => {
@@ -31,6 +30,7 @@ const Header = () => {
                     <FontAwesomeIcon icon={faUserCircle} size="lg"/>
                 </a>
           </div>
+        </div>
     )
-}
+    }
 export default Header;
