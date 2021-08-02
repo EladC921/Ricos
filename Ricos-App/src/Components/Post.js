@@ -19,10 +19,10 @@ const Post = (props) => {
 
                 <div className="post-header-center">
                     <div className="post-recipe-title">
-                        <span>{props.title}</span>
+                        {props.title}
                     </div>
                     <div className="post-author">
-                        <span>{props.author}</span>
+                        {props.author}
                     </div>
                 </div>
 

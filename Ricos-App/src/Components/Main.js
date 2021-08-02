@@ -6,12 +6,12 @@ const Main = () => {
         <div class="container-main">
             <Post title="Sushi with shoko"
                 author="Elad Cohen"
-                img="https://peasandcrayons.com/wp-content/uploads/2012/10/homemade-sushi-tutorial-recipe-peas-and-crayons-1250.jpg"
+                img="https://static.wixstatic.com/media/19cfe7_caa41f1f05f34f819479f8587fe1faa0~mv2.jpg/v1/fill/w_640,h_800,al_c,q_85,usm_0.66_1.00_0.01/19cfe7_caa41f1f05f34f819479f8587fe1faa0~mv2.webp"
                 likes="1500"
                 description="Sushi with avocado mashu tov" />
             <Post title="Malawach with Hilbe"
                 author="Bug Karta"
-                img="https://www.ynet.co.il/PicServer5/2018/08/24/8734177/87341650100294980681no.jpg"
+                img="https://i1.wp.com/gurmantur.com/wp-content/uploads/2018/08/Malawach.jpg"
                 likes="36952"
                 description="Malawach taim retzah" />
 

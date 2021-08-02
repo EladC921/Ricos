@@ -1,6 +1,5 @@
 .container-post {
     border: 1px solid gainsboro;
-    width: 50%;
     margin: 16px auto 0 auto;
     display: flex;
     flex-direction: column;
@@ -49,25 +48,22 @@
 }
 
 .post-img-container {
-    margin: 8px auto 8px auto;
-    max-height: 500px;
-    max-width: 450px;
     display: flex;
-    align-items: center;
-    overflow: hidden;
+    /*align-items: center;
+    overflow: hidden;*/
 }
 
 .post-img {
     width: 100%;
-    object-fit: cover;
-    
+    /*object-fit: cover;*/
+    height: auto;
 }
 
 .post-footer {
     padding: 16px;
 }
 
-.post-actions > * {
+.post-actions>* {
     margin-right: 12px;
 }
 
@@ -77,4 +73,37 @@
 
 .post-description {
     margin-top: 8px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .container-post {
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .container-post {
+        width: 640px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    
 }
