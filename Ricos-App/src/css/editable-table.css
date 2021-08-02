@@ -1,0 +1,9 @@
+.table-title {
+  display: flex;
+  width: 100%;
+}
+.table-items {
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
