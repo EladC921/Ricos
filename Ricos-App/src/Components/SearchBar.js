@@ -1,11 +1,10 @@
+import '../css/header.css';
 
 const SearchBar = () =>{
     return(
         <div>
-            <input type="text"/>
+            <input className="search-bar" name="subject" type="text" placeholder="Search.."/>
         </div>
     )
 }
-
-
 export default SearchBar;

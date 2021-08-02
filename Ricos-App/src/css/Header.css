@@ -2,10 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: blueviolet;
+  background-color: rgb(241, 168, 11);
   padding: 5px;
 }
 #logo-img {
   width: 50px;
   height: 50px;
+}
+.social-icons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.search-bar {
+  text-indent: 5px;
+  font-size: 12.6pt;
+  border-radius: 5px;
+  border: solid 1.5px #d3d3d3;
+  transition: 1s;
+}
+.search-bar:hover {
+  box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+}
+.search-bar:focus {
+  box-shadow: 0 0 5pt 2pt #d3d3d3;
+  outline-width: 0px;
+}
+a:visited {
+  color: transparent;
 }
