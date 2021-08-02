@@ -1,4 +1,4 @@
-import logo from '../img/Logo.png';
+import logo from '../img/logo.png';
 import SearchBar from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHospital } from '@fortawesome/free-regular-svg-icons'
@@ -8,14 +8,14 @@ import { faCompass } from '@fortawesome/free-regular-svg-icons'
 
 import '../css/header.css';
 
-const Header = () =>{
-    return(
+const Header = () => {
+    return (
         <div class="container-head">
             <div>
-                <img id="logo-img"src={logo} alt="Logo!"/>
+                <img id="logo-img" src={logo} alt="Logo!" />
             </div>
             <div>
-                <SearchBar/>
+                <SearchBar />
             </div>
             <div className="social-icons-container">
                 <a href="/">
@@ -30,9 +30,7 @@ const Header = () =>{
                 <a href="/">
                     <FontAwesomeIcon icon={faUserCircle} size="lg"/>
                 </a>
-
-            </div>
-        </div>
+          </div>
     )
 }
 export default Header;
