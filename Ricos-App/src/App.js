@@ -1,14 +1,18 @@
 import Header from "./Components/Header";
 import Main from "./Components/Main";
-import "./css/app.css"
+import Login from "./Components/Login";
+import "./css/app.css";
 
 const App = () => {
-    return (
-        <div className="container">
+  return (
+    /*<div className="container">
             <Header />
             <Main />
-        </div>
-    );
-}
+        </div>*/
+    <>
+      <Login />
+    </>
+  );
+};
 
 export default App;
