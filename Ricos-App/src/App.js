@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
 import Profile from "./Components/Profile";
+import Explore from "./Components/Explore";
 
 import "./css/app.css"
 
@@ -14,6 +15,7 @@ const App = () => {
       </Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/profile/:id" component={Profile} />
+      <Route exact path="/explore" component={Explore} />
 
     </div>
   );

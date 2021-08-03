@@ -1,8 +1,8 @@
-a {
+.post-container a {
     text-decoration: none;
 }
 
-a:hover {
+.post-container a:hover {
     color: #196679;
     cursor: pointer;
 }
