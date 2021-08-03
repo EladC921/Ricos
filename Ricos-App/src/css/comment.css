@@ -1,0 +1,15 @@
+a {
+    all: inherit;
+}
+
+.comment-container {
+    margin-top: 4px;
+}
+
+.comment-author {
+    font-weight: 600;
+}
+
+.comment-content {
+    margin-left: 5px;
+}
