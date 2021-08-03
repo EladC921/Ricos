@@ -10,6 +10,12 @@ import Comment from './Comment';
 
 const Post = (props) => {
     const postId = props.postId
+    const authorId = props.authorId
+    const title = props.title
+    const authorName = props.authorName
+    const img = props.img
+    const likes = props.likes
+    const description = props.description
 
     const like = () => {
         alert("like post #" + postId)
@@ -24,7 +30,7 @@ const Post = (props) => {
     }
 
     const unfollow = () => {
-        alert("unfollow " + props.authorName)
+        alert("unfollow " + authorName)
     }
 
     const reportPost = () => {
@@ -38,24 +44,23 @@ const Post = (props) => {
         }
     }
 
-
     return (
         <div className="post-container">
 
             <div className="post-header">
                 <div className="post-header-left">
                     <div className="post-profile-picture">
-                        <ProfilePicture authorId={props.authorId} />
+                        <ProfilePicture id={authorId} size="sm" />
                     </div>
                 </div>
 
                 <div className="post-header-center">
                     <div className="post-recipe-title">
-                        {props.title}
+                        {title}
                     </div>
                     <div className="post-author">
-                        <a href={"/profile/" + props.authorId}>
-                            {props.authorName}
+                        <a href={"/profile/" + authorId}>
+                            {authorName}
                         </a>
                     </div>
                 </div>
@@ -74,7 +79,7 @@ const Post = (props) => {
 
             <div className="post-body">
                 <div className="post-img-container" onDoubleClick={like}>
-                    <img className="post-img" src={props.img} />
+                    <img className="post-img" src={img} />
                 </div>
             </div>
 
@@ -86,11 +91,11 @@ const Post = (props) => {
                 </div>
 
                 <div className="post-likes">
-                    {parseInt(props.likes).toLocaleString()} likes
+                    {parseInt(likes).toLocaleString()} likes
                 </div>
 
                 <div className="post-description">
-                    {props.description}
+                    {description}
                 </div>
 
                 <div className="post-comments">

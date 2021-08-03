@@ -1,5 +1,6 @@
 import Header from "./Components/Header";
 import Main from "./Components/Main";
+import Profile from "./Components/Profile";
 import "./css/app.css"
 
 const App = () => {

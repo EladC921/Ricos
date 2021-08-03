@@ -28,7 +28,7 @@ input:focus {
 }*/
 
 .post-header {
-    padding: 16px;
+    padding: 8px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid gainsboro;
@@ -44,7 +44,7 @@ input:focus {
 
 .post-header-center {
     flex-direction: column;
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .post-header-right {

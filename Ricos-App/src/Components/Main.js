@@ -18,7 +18,6 @@ const Main = () => {
                 img="https://i1.wp.com/gurmantur.com/wp-content/uploads/2018/08/Malawach.jpg"
                 likes="36952"
                 description="Malawach taim retzah" />
-
         </div>
     )
 }
