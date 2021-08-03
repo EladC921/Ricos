@@ -6,7 +6,7 @@ import "../css/login.css";
 const Login = () => {
   return (
     <div class="main">
-      <div className="container">
+      <div className="login-container">
         <div className="logbox">
           <div id="logo">
             <img src={logo} alt="Logo" />

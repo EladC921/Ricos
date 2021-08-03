@@ -7,11 +7,11 @@ a:hover {
     cursor: pointer;
 }
 
-input {
+.post-add-comment input {
     border: none;
 }
 
-input:focus {
+.post-add-comment input:focus {
     outline: none;
 }
 

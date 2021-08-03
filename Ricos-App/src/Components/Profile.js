@@ -2,13 +2,16 @@ import '../css/profile.css'
 import ProfileMiniPost from './ProfileMiniPost'
 import ProfilePicture from './ProfilePicture'
 
-const Profile = () => {
+const Profile = (props) => {
+    const id = props.match.params.id
+    console.log(id)
+
     return (
         <div className="profile-container">
 
             <div className="profile-info">
                 <div className="profile-info-left">
-                    <ProfilePicture size="lg" />
+                    <ProfilePicture size="lg" isLink={false} />
                 </div>
 
                 <div className="profile-info-center">
