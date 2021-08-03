@@ -1,0 +1,213 @@
+.container,
+input,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+div {
+  border: 0 solid #000000;
+  box-sizing: border-box;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-align: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+
+input {
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  font: 400 13.3333px Arial;
+  -webkit-writing-mode: horizontal-tb !important;
+}
+
+.text a,
+.text a:visited,
+.text a:hover,
+.text a:active {
+  color: #3897f0;
+  margin-left: 3px;
+}
+
+.text {
+  text-align: center;
+  margin: 15px;
+  color: #262626;
+  font-size: 14px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.container {
+  margin: 16px auto 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  max-width: 350px;
+  margin-top: 12px;
+  -webkit-box-pack: justify;
+  -webkit-box-align: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+
+.form-wrap {
+  border: 0 solid #000000;
+  box-sizing: border-box;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+}
+
+.form {
+  flex-direction: column;
+  margin-bottom: 10px;
+  -webkit-box-direction: normal;
+}
+
+.logbox {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.input-box {
+  margin: auto 40px 6px;
+}
+
+.input {
+  border: 1px solid #efefef;
+  background-color: #fafafa;
+  border-radius: 3px;
+  height: 36px;
+  width: 100%;
+  font-size: 12px;
+  margin: 0;
+  padding: 9px 0 7px 8px;
+  text-overflow: ellipsis;
+  outline: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.input:hover {
+  border: 1px solid gray;
+}
+
+#logo {
+  width: 100px;
+  margin: auto;
+}
+
+#logo img {
+  width: 100%;
+}
+
+#ricos {
+  width: 200px;
+  margin: auto;
+}
+
+#ricos img {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button-box {
+  display: block;
+  position: relative;
+  margin: 8px 40px;
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  padding: 0 8px;
+  background: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  height: 28px;
+  line-height: 26px;
+  outline: none;
+  white-space: nowrap;
+}
+
+.forgot-box {
+  display: block;
+  margin: 8px 40px;
+  text-align: center;
+}
+
+.forgot,
+.forgot:active,
+.forgot:hover,
+.forgot:visited {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 12px;
+  color: #003569;
+  line-height: 14px !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+}

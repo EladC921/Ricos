@@ -7,7 +7,6 @@ import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import Comment from './Comment';
 
-
 const Post = (props) => {
     const postId = props.postId
     const authorId = props.authorId
@@ -109,8 +108,27 @@ const Post = (props) => {
                 <input class="add-comment-input" type="text" placeholder="Add a comment" onKeyDown={keyPressed}></input>
             </div>
 
+      <div className="post-body">
+        <div className="post-img-container">
+          <img className="post-img" src={props.img} />
         </div>
-    )
-}
+      </div>
+
+      <div className="post-footer">
+        <div className="post-actions">
+          <FontAwesomeIcon icon={faHeart} size="lg" />
+          <FontAwesomeIcon icon={faComment} size="lg" />
+          <FontAwesomeIcon icon={faPaperPlane} size="lg" />
+        </div>
+
+        <div className="post-likes">
+          {parseInt(props.likes).toLocaleString()} likes
+        </div>
+
+        <div className="post-description">{props.description}</div>
+      </div>
+    </div>
+  );
+};
 
 export default Post;
