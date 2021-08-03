@@ -49,7 +49,7 @@ const Post = (props) => {
             <div className="post-header">
                 <div className="post-header-left">
                     <div className="post-profile-picture">
-                        <ProfilePicture id={authorId} size="sm" />
+                        <ProfilePicture id={authorId} size="sm" isLink={true} />
                     </div>
                 </div>
 
@@ -107,26 +107,6 @@ const Post = (props) => {
             <div className="post-add-comment">
                 <input class="add-comment-input" type="text" placeholder="Add a comment" onKeyDown={keyPressed}></input>
             </div>
-
-      <div className="post-body">
-        <div className="post-img-container">
-          <img className="post-img" src={props.img} />
-        </div>
-      </div>
-
-      <div className="post-footer">
-        <div className="post-actions">
-          <FontAwesomeIcon icon={faHeart} size="lg" />
-          <FontAwesomeIcon icon={faComment} size="lg" />
-          <FontAwesomeIcon icon={faPaperPlane} size="lg" />
-        </div>
-
-        <div className="post-likes">
-          {parseInt(props.likes).toLocaleString()} likes
-        </div>
-
-        <div className="post-description">{props.description}</div>
-      </div>
     </div>
   );
 };
