@@ -5,7 +5,7 @@ import RecipeForm from "./RecipeForm";
 const Main = () => {
   return (
     <div class="container-main">
-      <Post
+      {/* <Post
         title="Sushi with shoko"
         author="Elad Cohen"
         img="https://static.wixstatic.com/media/19cfe7_caa41f1f05f34f819479f8587fe1faa0~mv2.jpg/v1/fill/w_640,h_800,al_c,q_85,usm_0.66_1.00_0.01/19cfe7_caa41f1f05f34f819479f8587fe1faa0~mv2.webp"
@@ -18,7 +18,7 @@ const Main = () => {
         img="https://i1.wp.com/gurmantur.com/wp-content/uploads/2018/08/Malawach.jpg"
         likes="36952"
         description="Malawach taim retzah"
-      />
+      /> */}
       {/* Test */}
       <RecipeForm />
       {/* Test */}

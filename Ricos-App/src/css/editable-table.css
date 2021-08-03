@@ -1,9 +1,53 @@
-.table-title {
+.table-row {
   display: flex;
   width: 100%;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
+  background-color: white;
 }
-.table-items {
-  border: 1px solid black;
+.table-col {
   width: 50%;
   text-align: center;
+}
+.remove-add-button {
+  position: absolute;
+  margin-left: 5px;
+}
+
+.div-ingrident-table {
+  background-color: #eee;
+  border: solid 1.5px #d3d3d3;
+  border-spacing: 5px;
+}
+.title {
+  background-color: rgb(226, 168, 43, 0.5);
+}
+.input-row {
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+}
+.input-col {
+  width: 50%;
+  text-align: center;
+  border: solid 1.5px #d3d3d3;
+  transition: 1s;
+}
+.input-col:hover {
+  box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+}
+.input-col:focus {
+  box-shadow: 0 0 5pt 2pt #d3d3d3;
+  outline-width: 0px;
+}
+
+.color-green-add {
+  color: green;
+}
+
+.color-red-remove {
+  color: red;
+}
+.table-row-hover:hover {
+  background-color: rgb(114, 112, 112, 0.1);
 }
