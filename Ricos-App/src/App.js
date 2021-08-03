@@ -1,8 +1,6 @@
 import Header from "./Components/Header";
 import Main from "./Components/Main";
-import Profile from "./Components/Profile";
-import Login from "./Components/Login";
-import "./css/app.css";
+import "./css/app.css"
 
 const App = () => {
     return (
