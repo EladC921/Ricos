@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "../css/edittable-list.css";
 
 const EditableList = () => {
-  const [inputList, setInputList] = useState([""]);
+  const [inputList, setInputList] = useState([]);
+  const [inputItem, setInputItem] = useState("");
   // handle input change
-  const handleInputChange = (e, index) => {
-    const list = [...inputList];
-    list[index] = e.target.value;
-    setInputList(list);
+  const handleInputChange = (e) => {
+    const inputItem = e.target.value;
+    setInputItem(inputItem);
   };
 
   // handle click event of the Remove button
@@ -19,7 +19,7 @@ const EditableList = () => {
 
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, ""]);
+    setInputList([...inputList, inputItem]);
   };
   return (
     <div className="App">
@@ -27,30 +27,30 @@ const EditableList = () => {
         {inputList.map((x, i) => {
           return (
             <li>
-              <div className="box">
-                <textarea
-                  placeholder="Write~ here..."
-                  value={x}
-                  onChange={(e) => handleInputChange(e, i)}
-                />
-                <div className="btn-box">
-                  {inputList.length !== 1 && (
+              <div className="">
+                <div>{x}</div>
+                <div className="">
+                  {
                     <button
                       className="mr10"
                       onClick={() => handleRemoveClick(i)}
                     >
                       Remove
                     </button>
-                  )}
-                  {inputList.length - 1 === i && (
-                    <button onClick={handleAddClick}>Add</button>
-                  )}
+                  }
                 </div>
               </div>
             </li>
           );
         })}
       </ol>
+      <textarea
+        placeholder="Write~ here..."
+        onChange={(e) => handleInputChange(e)}
+        rows="5"
+        cols="70"
+      />
+      {<button onClick={handleAddClick}>Add</button>}
     </div>
   );
 };
