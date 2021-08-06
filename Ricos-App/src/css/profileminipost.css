@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 16px;
+    margin-top: 16px;
 }
 
 .profile-mini-post-container a {
@@ -16,6 +17,7 @@
 }
 
 .profile-mini-post-img {
+    display: block;
     max-width: 240px;
     max-height: 240px;
     width: 100%;

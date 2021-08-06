@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import '../css/exploreminipost.css'
 
 
@@ -5,18 +6,22 @@ const ExploreMiniPost = (props) => {
     const postId = props.postId
     const img = props.img
     const title = props.title
+    const author = props.author
+    const authorId = props.authorId
     const description = props.description
 
     return (
-        <a href="#">
-            <div className="explore-mini-post-container">
+        <div className="explore-mini-post-container">
+            <a href="#">
 
                 <div className="explore-mini-post-header">
                     <div className="explore-mini-post-title">
                         {title}
                     </div>
                     <div className="explore-mini-post-author">
-                        {title}
+                        <a href={"/profile/" + authorId}>
+                            {author}
+                        </a>
                     </div>
                 </div>
 
@@ -30,9 +35,8 @@ const ExploreMiniPost = (props) => {
                         {description}
                     </div>
                 </div>
-
-            </div>
-        </a>
+            </a>
+        </div>
     )
 }
 

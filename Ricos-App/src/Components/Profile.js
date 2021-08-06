@@ -62,6 +62,16 @@ const Profile = (props) => {
                     title="New York Strip"
                     img="https://i.pinimg.com/736x/ea/fd/60/eafd600a934d3fb7ef4a228387953485.jpg"
                     description="Delicious steak" />
+                    <ProfileMiniPost
+                    postId="3"
+                    title="New York Strip"
+                    img="https://i.pinimg.com/736x/ea/fd/60/eafd600a934d3fb7ef4a228387953485.jpg"
+                    description="Delicious steak" />
+                    <ProfileMiniPost
+                    postId="3"
+                    title="New York Strip"
+                    img="https://i.pinimg.com/736x/ea/fd/60/eafd600a934d3fb7ef4a228387953485.jpg"
+                    description="Delicious steak" />
             </div>
         </div>
     )
