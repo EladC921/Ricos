@@ -1,33 +1,45 @@
-.mini-post-container {
+.profile-mini-post-container {
     border: 1px solid gainsboro;
     /*border-bottom: 1px solid gainsboro;*/
     display: flex;
     flex-direction: column;
+    margin-left: 16px;
+    margin-top: 16px;
 }
 
-.mini-post-img {
+.profile-mini-post-container a {
+    text-decoration: none;
+}
+
+.profile-mini-post-container a:hover {
+    color: #196679;
+    cursor: pointer;
+}
+
+.profile-mini-post-img {
+    display: block;
     max-width: 240px;
     max-height: 240px;
     width: 100%;
     height: auto;
 }
 
-.mini-post-footer {
+.profile-mini-post-footer {
     padding: 8px 8px 12px 8px;
 }
 
-.mini-post-title {
+.profile-mini-post-title {
     font-weight: 600;
 }
 
-.mini-post-description {
+.profile-mini-post-description {
     font-size: 11pt;
 }
 
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-    .mini-post-container {
+    .profile-mini-post-container {
         border-bottom:  1px solid gainsboro;
         width: 100%;
         height: auto;
@@ -35,7 +47,7 @@
         margin: 0 0 16px 0;
     }
 
-    .mini-post-img {
+    .profile-mini-post-img {
         max-width: none;
         max-height: none;
     }
