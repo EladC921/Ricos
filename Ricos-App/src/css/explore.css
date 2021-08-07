@@ -1,0 +1,57 @@
+.explore-container {
+    /*border: 1px solid gainsboro;*/
+    /*margin: 16px auto 0 auto;*/
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .explore-container {
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .explore-container {
+        width: 620px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .explore-container {
+        width: 760px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .explore-container {
+        width: 760px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .explore-container {
+        width: 1140px;
+    }
+}
+
+/* Larger monitors (large desktops, 1600px and up) */
+
+@media only screen and (min-width: 1600px) {
+    .explore-container {
+        width: 1440px;
+    }
+}

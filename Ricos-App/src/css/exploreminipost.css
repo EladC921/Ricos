@@ -1,0 +1,144 @@
+.explore-mini-post-container {
+    transition: all .2s ease;
+    border: 1px solid gainsboro;
+    /*border-bottom: 1px solid gainsboro;*/
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.explore-mini-post-container::first-line {
+    margin-left: 0;
+}
+
+.explore-mini-post-container:hover {
+    transition: all .2s ease;
+    transform: scale(1.03);
+}
+
+.explore-mini-post-container a {
+    text-decoration: none;
+}
+
+.explore-mini-post-header {
+    padding: 8px 8px 12px 8px;
+}
+
+.explore-mini-post-title {
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+.explore-mini-post-author {
+    font-size: 11pt;
+}
+
+.explore-mini-post-author a:hover {
+    color: #196679;
+}
+
+.explore-mini-post-img {
+    display: block;
+    max-width: 340px;
+    max-height: 340px;
+}
+
+.explore-mini-post-footer {
+    padding: 8px 8px 12px 8px;
+}
+
+.explore-mini-post-description {
+    font-size: 12pt;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .explore-mini-post-container {
+        width: 45%;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    /*.explore-mini-post-container:hover {
+        transform: none;
+    }*/
+
+    .explore-mini-post-title {
+        font-size: 14pt;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .explore-mini-post-author {
+        font-size: 10pt;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .explore-mini-post-footer {
+        display: none;
+    }
+
+    .explore-mini-post-img {
+        max-width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .explore-mini-post-container {
+        max-width: 180px;
+    }
+
+    /*.explore-mini-post-container:hover {
+        transform: none;
+    }*/
+
+    .explore-mini-post-title {
+        font-size: 14pt;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .explore-mini-post-author {
+        font-size: 10pt;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .explore-mini-post-footer {
+        display: none;
+    }
+
+    .explore-mini-post-img {
+        max-width: 180px;
+        max-height: 180px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .explore-mini-post-container {
+        max-width: 340px;
+    }
+
+    .explore-mini-post-img {
+        max-width: 340px;
+        max-height: 340px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}
