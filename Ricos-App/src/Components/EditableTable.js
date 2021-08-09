@@ -30,6 +30,7 @@ const EditableTable = () => {
   const handleAddClick = () => {
     if (!isEmpty(inputItem.ingredients) && !isEmpty(inputItem.quantity)) {
       setInputList([...inputList, inputItem]);
+      setItem({ ingredients: "", quantity: "" });
     }
   };
 

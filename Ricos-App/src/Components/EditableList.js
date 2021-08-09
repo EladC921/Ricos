@@ -20,6 +20,12 @@ const EditableList = () => {
   // handle click event of the Add button
   const handleAddClick = () => {
     setInputList([...inputList, inputItem]);
+    setInputItem("");
+  };
+
+  const handleEditClick = (index) => {
+    const item = inputList[index];
+    setInputItem(item);
   };
   return (
     <div className="App">
@@ -39,12 +45,16 @@ const EditableList = () => {
                     </button>
                   }
                 </div>
+                <div>
+                  {<button onClick={() => handleEditClick(i)}>Edit</button>}
+                </div>
               </div>
             </li>
           );
         })}
       </ol>
       <textarea
+        value={inputItem}
         placeholder="Write~ here..."
         onChange={(e) => handleInputChange(e)}
         rows="5"
