@@ -9,3 +9,31 @@ li:before {
   counter-increment: elementcounter;
   font-weight: bold;
 }
+
+.editable-list-textarea {
+  width: 95%;
+  resize: none;
+}
+
+.editable-list-add-button,
+.edit-list-save-button {
+  color: green;
+}
+.editable-list-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editable-list-div {
+  width: 95%;
+}
+
+.editable-list-discard-button,
+.editable-list-remove-button {
+  color: red;
+}
+
+.editable-list-div-width {
+  width: 21.8px;
+}

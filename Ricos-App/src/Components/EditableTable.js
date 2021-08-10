@@ -36,47 +36,48 @@ const EditableTable = () => {
 
   return (
     <div>
-      <div className="div-ingrident-table">
-        <div className="table-row title">
-          <div className="table-col">ingredients</div>
-          <div className="table-col">quantity</div>
+      <div className="editable-table-ingredient-row">
+        <div className="test1">
+          <div className="editable-table-ingredient-col">ingredients</div>
+          <div className="editable-table-ingredient-col">quantity</div>
         </div>
-        {inputList.map((x, i) => {
-          return (
-            <div className="table-row table-row-hover">
-              <div className="table-col">{x.ingredients}</div>
-              <div className="table-col">{x.quantity}</div>
-              <div>
-                <FontAwesomeIcon
-                  className="remove-add-button color-red-remove"
-                  icon={faMinusCircle}
-                  onClick={handleRemoveClick}
-                />
-              </div>
-            </div>
-          );
-        })}
       </div>
-      <div className="input-row">
+      {inputList.map((x, i) => {
+        return (
+          <div className="editable-table-ingredient-row">
+            <div className="editable-table-ingredient-col">{x.ingredients}</div>
+            <div className="editable-table-ingredient-col">{x.quantity}</div>
+            <div>
+              <FontAwesomeIcon
+                className="remove-add-button color-red-remove"
+                icon={faMinusCircle}
+                onClick={() => handleRemoveClick(i)}
+              />
+            </div>
+          </div>
+        );
+      })}
+      <div className="editable-table-ingredient-row">
         <input
-          className="input-col"
+          className="editable-table-ingredient-col"
           name="ingredients"
           placeholder="ingredients"
           value={inputItem.ingredients}
           onChange={(e) => handleInputChange(e)}
         />
         <input
-          className="input-col"
+          className="editable-table-ingredient-col"
           name="quantity"
-          placeholder="Enter quantity"
+          placeholder="quantity"
           value={inputItem.quantity}
           onChange={(e) => handleInputChange(e)}
         />
-        <div>
+        <div className="test">
           <FontAwesomeIcon
             className="remove-add-button color-green-add"
             icon={faPlusCircle}
             onClick={handleAddClick}
+            size="lg"
           />
         </div>
       </div>

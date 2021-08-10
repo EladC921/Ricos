@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import "../css/edittable-list.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const EditableList = () => {
   const [inputList, setInputList] = useState([]);
@@ -58,37 +64,51 @@ const EditableList = () => {
     setEditItem(item);
   };
   return (
-    <div className="App">
+    <div>
       <ol>
         {inputList.map((x, i) => {
           return (
             <li>
-              <div className="">
+              <div className="editable-list-input-container">
                 {editItem[i][1] ? (
                   <textarea
+                    className="editable-list-textarea"
                     value={editItem[i][0]}
                     onChange={(e) => handleEditChange(e, i)}
+                    rows="7"
                   />
                 ) : (
-                  <div className="test">{x}</div>
+                  <div className="editable-list-div">{x}</div>
                 )}
                 {editItem[i][1] ? (
-                  <div>
-                    <button className="" onClick={() => handleSaveClick(i)}>
-                      save
-                    </button>
-                    <button className="" onClick={() => handleDiscardClick(i)}>
-                      discard
-                    </button>
+                  <div className="editable-list-div-width">
+                    <FontAwesomeIcon
+                      className="edit-list-save-button"
+                      icon={faCheck}
+                      onClick={() => handleSaveClick(i)}
+                      size="lg"
+                    />
+                    <FontAwesomeIcon
+                      className="editable-list-discard-button"
+                      icon={faTimesCircle}
+                      onClick={() => handleDiscardClick(i)}
+                      size="lg"
+                    />
                   </div>
                 ) : (
-                  <div>
-                    <button className="" onClick={() => handleRemoveClick(i)}>
-                      Remove
-                    </button>
-                    <button className="" onClick={() => handleEditClick(i)}>
-                      Edit
-                    </button>
+                  <div className="editable-list-div-width">
+                    <FontAwesomeIcon
+                      className=""
+                      icon={faEdit}
+                      onClick={() => handleEditClick(i)}
+                      size="lg"
+                    />
+                    <FontAwesomeIcon
+                      className="editable-list-remove-button"
+                      icon={faMinusCircle}
+                      onClick={() => handleRemoveClick(i)}
+                      size="lg"
+                    />
                   </div>
                 )}
               </div>
@@ -96,14 +116,23 @@ const EditableList = () => {
           );
         })}
       </ol>
-      <textarea
-        value={inputItem}
-        placeholder="Write~ here..."
-        onChange={(e) => handleInputChange(e)}
-        rows="5"
-        cols="70"
-      />
-      {<button onClick={handleAddClick}>Add</button>}
+      <div className="editable-list-input-container">
+        <textarea
+          className="editable-list-textarea"
+          value={inputItem}
+          placeholder="Write~ here..."
+          onChange={(e) => handleInputChange(e)}
+          rows="7"
+        />
+        <div>
+          <FontAwesomeIcon
+            className="editable-list-add-button"
+            icon={faPlusCircle}
+            onClick={handleAddClick}
+            size="lg"
+          />
+        </div>
+      </div>
     </div>
   );
 };
