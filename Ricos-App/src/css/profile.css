@@ -78,9 +78,8 @@
     margin-top: 16px;
     padding: 8px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: flex-start;
-    flex-wrap: wrap;
 }
 
 /* Extra small devices (phones, 600px and down) */

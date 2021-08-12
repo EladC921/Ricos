@@ -334,3 +334,5 @@ ASALocalRun/
 .localhistory/
 
 *.config
+Ricos-App/run.bat
+Start Ricos.lnk
