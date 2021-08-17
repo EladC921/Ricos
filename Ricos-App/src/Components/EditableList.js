@@ -12,6 +12,7 @@ const EditableList = () => {
   const [inputItem, setInputItem] = useState("");
   const [editItem, setEditItem] = useState([]);
   // handle input change
+
   const handleInputChange = (e) => {
     const inputItem = e.target.value;
     setInputItem(inputItem);
