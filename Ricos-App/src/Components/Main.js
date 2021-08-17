@@ -7,18 +7,16 @@ const Main = () => {
   const [postsState, setPostsState] = useState([{}]);
 
   const getPosts = () => {
-    return fetch("http://localhost:8081/posts")
-      .then((res) => {
-        res.json();
-      })
+    return fetch("http://localhost:8081/posts/")
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        return data
       });
-  };
+  }
 
   useEffect(() => {
     getPosts().then((data) => {
-      console.log(data);
+      setPostsState(data)
     });
   }, []);
 
