@@ -1,0 +1,70 @@
+.profile-mini-post-container {
+    border: 1px solid gainsboro;
+    /*border-bottom: 1px solid gainsboro;*/
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.profile-mini-post-container a {
+    text-decoration: none;
+}
+
+.profile-mini-post-container a:hover {
+    color: #196679;
+    cursor: pointer;
+}
+
+.profile-mini-post-img {
+    display: block;
+    max-width: 240px;
+    max-height: 240px;
+    width: 100%;
+    height: auto;
+}
+
+.profile-mini-post-footer {
+    padding: 8px 8px 12px 8px;
+}
+
+.profile-mini-post-title {
+    font-weight: 600;
+}
+
+.profile-mini-post-description {
+    font-size: 11pt;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .profile-mini-post-container {
+        border-bottom:  1px solid gainsboro;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0 0 16px 0;
+    }
+
+    .profile-mini-post-img {
+        max-width: none;
+        max-height: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}

@@ -1,4 +1,21 @@
-.container-post {
+.post-container a {
+    text-decoration: none;
+}
+
+.post-container a:hover {
+    color: #196679;
+    cursor: pointer;
+}
+
+.post-add-comment input {
+    border: none;
+}
+
+.post-add-comment input:focus {
+    outline: none;
+}
+
+.post-container {
     border: 1px solid gainsboro;
     margin: 16px auto 0 auto;
     display: flex;
@@ -6,12 +23,12 @@
     justify-content: center;
 }
 
-/*.container-post > div {
+/*.post-container > div {
     border: 1px solid gray;
 }*/
 
 .post-header {
-    padding: 16px;
+    padding: 8px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid gainsboro;
@@ -27,7 +44,7 @@
 
 .post-header-center {
     flex-direction: column;
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .post-header-right {
@@ -35,8 +52,14 @@
     margin-right: 8px;
 }
 
+.dropdown-menu-button {
+    background-color: transparent;
+    border: none;
+}
+
 .post-recipe-title {
     font-size: large;
+    font-weight: 600;
 }
 
 .post-author {
@@ -49,18 +72,16 @@
 
 .post-img-container {
     display: flex;
-    /*align-items: center;
-    overflow: hidden;*/
 }
 
 .post-img {
     width: 100%;
-    /*object-fit: cover;*/
     height: auto;
 }
 
 .post-footer {
     padding: 16px;
+    border-bottom: 1px solid gainsboro;
 }
 
 .post-actions>* {
@@ -75,35 +96,47 @@
     margin-top: 8px;
 }
 
+.post-comments {
+    margin-top: 8px;
+}
+
+.post-add-comment {
+    padding: 8px 16px 8px 16px;
+}
+
+.add-comment-input {
+    height: 32px;
+    width: 100%;
+}
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-    .container-post {
+    .post-container {
         width: 100%;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
-@media only screen and (min-width: 600px) {
-
-}
+@media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
 
 @media only screen and (min-width: 768px) {
+    .post-container {
+        width: 639px;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 
 @media only screen and (min-width: 992px) {
-    .container-post {
-        width: 640px;
+    .post-container {
+        width: 639px;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1200px) {
-    
-}
+@media only screen and (min-width: 1200px) {}
