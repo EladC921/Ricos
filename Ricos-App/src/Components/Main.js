@@ -1,5 +1,6 @@
 import Post from "./Post";
-import '../css/main.css';
+import "../css/main.css";
+import RecipeForm from "./RecipeForm";
 
 const Main = () => {
     return (
