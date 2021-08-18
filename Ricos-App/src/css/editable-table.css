@@ -1,0 +1,11 @@
+.editable-table-ingredient-row {
+  display: flex;
+  justify-content: space-between;
+}
+.editable-table-ingredient-col {
+  width: 50%;
+  float: left;
+}
+.test1 {
+  width: 50%;
+}
