@@ -36,10 +36,10 @@ const EditableTable = () => {
 
   return (
     <div>
-      <div className="editable-table-ingredient-row">
-        <div className="test1">
-          <div className="editable-table-ingredient-col">ingredients</div>
-          <div className="editable-table-ingredient-col">quantity</div>
+      <div className="">
+        <div className="">
+          <div className="">ingredients</div>
+          <div className="">quantity</div>
         </div>
       </div>
       {inputList.map((x, i) => {

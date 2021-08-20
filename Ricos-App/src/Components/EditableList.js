@@ -11,8 +11,11 @@ const EditableList = () => {
   const [inputList, setInputList] = useState([]);
   const [inputItem, setInputItem] = useState("");
   const [editItem, setEditItem] = useState([]);
-  // handle input change
 
+  // returns if the the textarea is empty or not
+  const isEmpty = (string) => string.trim() === "" || !string.trim();
+
+  // handle input change
   const handleInputChange = (e) => {
     const inputItem = e.target.value;
     setInputItem(inputItem);
@@ -35,11 +38,12 @@ const EditableList = () => {
   };
 
   // handle click event of the Add button
-  // TODO  Check if text area is empty
   const handleAddClick = () => {
-    setInputList([...inputList, inputItem]);
-    setEditItem([...editItem, [inputItem, false]]);
-    setInputItem("");
+    if (!isEmpty(inputItem)) {
+      setInputList([...inputList, inputItem]);
+      setEditItem([...editItem, [inputItem, false]]);
+      setInputItem("");
+    }
   };
 
   const handleSaveClick = (index) => {
