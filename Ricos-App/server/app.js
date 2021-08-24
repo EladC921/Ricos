@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
+const postRecipeRouter = require('./routes/postRecipe');
+
 const app = express();
 
 const posts = [
@@ -24,11 +26,20 @@ const posts = [
   },
 ];
 
+
+
 app.use(cors());
-app.get("/posts/", (req, res) => {
+app.use('/postRecipe', postRecipeRouter);
+
+const postRecipe = require('./services/postRecipe');
+postRecipe.createRecipe(1, "CURRENT_TIMESTAMP", "elad", "elad", "ladshmok", "11", "11");
+
+/*app.get("/posts/", (req, res) => {
   res.send(posts);
-});
+});*/
 
 app.listen(8081, () => {
   console.log("Server is Listening");
 });
+
+module.exports = app;
