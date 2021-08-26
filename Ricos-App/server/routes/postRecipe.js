@@ -1,15 +1,43 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const quotes = require('../services/postRecipe');
+const postRecipe = require("../services/postRecipe");
 
-router.post('/postRecipe', async function (req, res, next) {
-    try {
-        console.log(req.body)
-        res.json(await quotes.create(...req.body));
-    } catch (err) {
-        console.error(`Error while posting quotes `, err.message);
-        next(err);
-    }
+router.post("/postRecipe", async function (req, res, next) {
+  try {
+    const uid = req.body.uid;
+    const date = req.body.date;
+    const title = req.body.title;
+    const description = req.body.description;
+    const img = req.body.img;
+    const ingredients = req.body.ingredients;
+    const steps = req.body.steps;
+
+    if (
+      !uid ||
+      !date ||
+      !title ||
+      !description ||
+      !img ||
+      !ingredients ||
+      !steps
+    )
+      res.json("You forgot to add something!");
+    else
+      res.json(
+        await postRecipe.createRecipe(
+          uid,
+          date,
+          title,
+          description,
+          img,
+          ingredients,
+          steps
+        )
+      );
+  } catch (err) {
+    console.error(`Error while posting quotes `, err.message);
+    next(err);
+  }
 });
 
 module.exports = router;
