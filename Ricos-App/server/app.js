@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-
 const postRecipeRouter = require('./routes/postRecipe');
 
 const app = express();
@@ -29,10 +28,10 @@ const posts = [
 
 
 app.use(cors());
-app.use('/postRecipe', postRecipeRouter);
+app.use('/postRecipe/', postRecipeRouter);
 
 const postRecipe = require('./services/postRecipe');
-postRecipe.createRecipe(1, "CURRENT_TIMESTAMP", "elad", "elad", "ladshmok", "11", "11");
+//postRecipe.createRecipe(1, "CURRENT_TIMESTAMP", "elad", "elad", "ladshmok", "11", "11");
 
 /*app.get("/posts/", (req, res) => {
   res.send(posts);

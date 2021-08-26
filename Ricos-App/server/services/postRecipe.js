@@ -1,7 +1,7 @@
 const db = require('./db');
 
 async function createRecipe(uid, date, title, desc, img, ingredients, steps) {
-    const data = await db.query("INSERT INTO `Recipe`(`uid`, `date`, `title`, `description`, `img`, `ingredients`, `steps`) VALUES(?, '?', '?', '?', '?', '?', '?')", 
+    const result = await db.query("INSERT INTO `Recipe`(`uid`, `date`, `title`, `description`, `img`, `ingredients`, `steps`) VALUES(?, ?, ?, ?, ?, ?, ?)", 
         [uid, date, title, desc, img, ingredients, steps])
 
     let message = 'Error in creating quote';
