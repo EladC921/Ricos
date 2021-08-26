@@ -5,7 +5,7 @@ CREATE TABLE Users (
 	mail VARCHAR(255) NOT NULL,
 	firstName VARCHAR(55) NOT NULL,
 	lastName VARCHAR(55)
-)
+);
 
 CREATE TABLE Recipe (
 	rid INT PRIMARY KEY AUTO_INCREMENT,
@@ -18,13 +18,13 @@ CREATE TABLE Recipe (
 	steps MEDIUMTEXT,
 	numOfLikes INT DEFAULT 0,
 	FOREIGN KEY (uid) REFERENCES Users(uid)
-)
+);
 
 CREATE TABLE Comment (
 	cid INT PRIMARY KEY AUTO_INCREMENT,
 	content TEXT(1000) NOT NULL,
 	numOfLikes INT DEFAULT 0
-)
+);
 
 CREATE TABLE RecipeLikes(
 	uid INT,
@@ -32,7 +32,7 @@ CREATE TABLE RecipeLikes(
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (rid) REFERENCES Recipe(rid),
 	PRIMARY KEY(uid, rid)
-)
+);
 
 CREATE TABLE CommentLikes (
 	uid INT,
@@ -40,7 +40,7 @@ CREATE TABLE CommentLikes (
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (cid) REFERENCES Comment(cid),
 	PRIMARY KEY (uid, cid)
-)
+);
 
 CREATE TABLE CommentsOnRecipes (
 	uid INT,
@@ -50,7 +50,7 @@ CREATE TABLE CommentsOnRecipes (
 	FOREIGN KEY (cid) REFERENCES Comment(cid),
 	FOREIGN KEY (rid) REFERENCES Recipe(rid),
 	PRIMARY KEY (uid, cid, rid)
-)
+);
 
 CREATE TABLE Follows (
 	uid INT,
@@ -58,4 +58,4 @@ CREATE TABLE Follows (
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (followerId) REFERENCES Users(uid),
 	date DATETIME NOT NULL
-)
+);

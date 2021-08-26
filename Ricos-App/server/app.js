@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const postRecipeRouter = require("./routes/postRecipe");
 
 const app = express();
 
@@ -23,8 +24,23 @@ const posts = [
     description: "Malawach taim retzah",
   },
 ];
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
+app.use(postRecipeRouter);
+
+/*const postRecipe = require("./services/postRecipe");
+postRecipe.createRecipe(
+  1,
+  "CURRENT_TIMESTAMP",
+  "shai",
+  "shai",
+  "shmok",
+  "11",
+  "12"
+);*/
+
 app.get("/posts/", (req, res) => {
   res.send(posts);
 });
@@ -32,3 +48,5 @@ app.get("/posts/", (req, res) => {
 app.listen(8081, () => {
   console.log("Server is Listening");
 });
+
+module.exports = app;
