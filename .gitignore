@@ -336,5 +336,3 @@ ASALocalRun/
 *.config
 Ricos-App/run.bat
 Start Ricos.lnk
-db tables.docx
-Ricos-App/server/.env
