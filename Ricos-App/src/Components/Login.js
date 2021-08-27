@@ -17,7 +17,9 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <>
@@ -71,7 +73,7 @@ const Login = () => {
                   /* Error Message - Password */
                   errors.password && (
                     <p className="login-validation-error">
-                      Password must contain 6 to 30 letters
+                      Password must contain at least 6 characters
                     </p>
                   )
                 }
