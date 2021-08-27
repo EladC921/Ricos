@@ -71,7 +71,7 @@ const Login = () => {
                   /* Error Message - Password */
                   errors.password && (
                     <p className="login-validation-error">
-                      Password is required and must contain 6 to 30 letters.
+                      Password must contain 6 to 30 letters
                     </p>
                   )
                 }

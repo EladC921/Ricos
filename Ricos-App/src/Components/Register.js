@@ -1,6 +1,40 @@
 import "../css/register.css";
+import axios from 'axios';
 
 const Register = ({ setOpenReg }) => {
+  /*checkPass = () => {
+    /*Checks Password and Repeat Password equality --
+  };*/
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { username, password, mail, firstname, lastname } = this.state;
+
+    const user = {
+      username,
+      password,
+      mail,
+      firstname,
+      lastname
+    };
+
+    axios
+      .post('http://localhost:3001/postUser', user)
+      .then(() => console.log('User Created'))
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
+  };
+
   return (
     <div id="id01" className="reg-modal">
       <span
@@ -12,7 +46,7 @@ const Register = ({ setOpenReg }) => {
       >
         X
       </span>
-      <form className="reg-modal-content">
+      <form className="reg-modal-content" onSubmit={this.handleSubmit}>
         <div className="reg-container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
@@ -91,6 +125,7 @@ const Register = ({ setOpenReg }) => {
                 placeholder="Repeat Password"
                 name="psw-repeat"
                 className="reg-input"
+                /*onChange={checkPass}*/
                 required
               />
             </label>

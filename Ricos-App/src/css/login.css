@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  margin: auto;
   padding: 0;
   position: relative;
   -webkit-box-align: stretch;
@@ -196,7 +195,7 @@
 .login-validation-error {
   color: red;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
 }
 
 /* Extra small devices (phones, 600px and down) */
