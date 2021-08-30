@@ -3,9 +3,10 @@ const env = process.env;
 
 const express = require("express");
 const cors = require("cors");
-const port = env.PORT || 8081
+const port = env.PORT || 8081;
 const postRecipeRouter = require("./routes/postRecipe");
 const getRecipeRouter = require("./routes/getRecipe");
+const postUserRouter = require("./routes/postUser");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(postRecipeRouter);
 app.use(getRecipeRouter);
+app.use(postUserRouter);
 
 app.listen(port, () => {
   console.log("Server is Listening");
