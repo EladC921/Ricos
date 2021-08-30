@@ -6,10 +6,10 @@ async function createRecipe(uid, date, title, desc, img, ingredients, steps) {
     [uid, date, title, desc, img, ingredients, steps]
   );
 
-  let message = "Error in creating quote";
+  let message = "Error in creating post";
 
   if (result.affectedRows) {
-    message = "Quote created successfully";
+    message = "Post created successfully";
   }
 
   return { message };

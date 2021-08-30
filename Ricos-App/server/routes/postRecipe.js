@@ -35,7 +35,7 @@ router.post("/postRecipe", async function (req, res, next) {
         )
       );
   } catch (err) {
-    console.error(`Error while posting quotes `, err.message);
+    console.error(`Error while posting recipe`, err.message);
     next(err);
   }
 });
