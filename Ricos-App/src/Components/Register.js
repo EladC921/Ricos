@@ -18,40 +18,18 @@ const Register = ({ setOpenReg }) => {
     const _input = { ...input };
     _input[e.target.name] = e.target.value;
     setInput(_input);
-    console.log(_input);
+    //console.log(_input);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password, mail, firstName, lastName } = input;
-    /*const user = {
-      username,
-      password,
-      mail,
-      firstName,
-      lastName,
-    };*/
-
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `username=${username}&password=${password}&mail=${mail}&firstName=${firstName}&lastName=${lastName}`,
-    };
-    fetch("http://localhost:8081/postUser", requestOptions)
-      .then((response) => {
-        response.json();
-        console.log(response);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    /*axios
-      .post("http://localhost:8081/postUser", user)
+    axios
+      .post("http://localhost:8081/postUser", input)
       .then(() => console.log("User Created"))
       .catch((err) => {
         console.error(err);
-      });*/
+      });
   };
 
   return (
