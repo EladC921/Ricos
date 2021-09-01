@@ -4,10 +4,10 @@ const env = process.env;
 const express = require("express");
 const cors = require("cors");
 const port = env.PORT || 8081;
-const getRecipeRouter = require("./routes/getRecipe");
-const getCheckUserLoginRouter = require("./routes/checkUserLogin");
-const postRecipeRouter = require("./routes/postRecipe");
-const postUserRouter = require("./routes/postUser");
+const getRecipeRouter = require("./routes/Recipes/getRecipe");
+const getCheckUserLoginRouter = require("./routes/Users/checkUserLogin");
+const postRecipeRouter = require("./routes/Recipes/postRecipe");
+const postUserRouter = require("./routes/Users/postUser");
 
 const app = express();
 app.use(cors());

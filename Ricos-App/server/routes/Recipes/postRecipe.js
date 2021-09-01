@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const postRecipe = require("../services/postRecipe");
+const postRecipe = require("../../services/Recipes/postRecipe");
 
-router.post("/postRecipe", async function (req, res, next) {
+router.post("/recipes/post", async function (req, res, next) {
   try {
     const uid = req.body.uid;
     const date = req.body.date;
