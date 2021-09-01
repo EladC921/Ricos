@@ -3,6 +3,7 @@ import logo from "../img/logo.png";
 import ricos from "../img/ricos.png";
 import Register from "./Register";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 import "../css/login.css";
 
@@ -18,7 +19,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    axios
+      .get("http://localhost:8081/checkUserLogin", data)
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (

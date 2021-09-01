@@ -1,5 +1,5 @@
-const mysql = require('mysql2/promise');
-const config = require('../config');
+const mysql = require("mysql2/promise");
+const config = require("../config");
 const pool = mysql.createPool(config.db);
 
 async function query(sql, params) {
@@ -9,5 +9,5 @@ async function query(sql, params) {
 }
 
 module.exports = {
-  query
-}
+  query,
+};

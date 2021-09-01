@@ -1,0 +1,21 @@
+.msg-container {
+  display: flex;
+  border: 2px solid red;
+  margin: 16px auto 0 auto;
+  width: 80%;
+  height: 70vh;
+}
+
+.msg-container > div {
+  float: left;
+  border: 2px solid black;
+}
+
+.msg-right-chat {
+  width: 70%;
+}
+
+.msg-left-contacts {
+  width: 30%;
+  overflow: auto;
+}

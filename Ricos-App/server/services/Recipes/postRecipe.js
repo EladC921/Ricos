@@ -1,4 +1,4 @@
-const db = require("./db");
+const db = require("../db");
 
 async function createRecipe(uid, date, title, desc, img, ingredients, steps) {
   const result = await db.query(

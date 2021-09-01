@@ -1,38 +1,35 @@
 import "../css/register.css";
-import axios from 'axios';
+import axios from "axios";
+import { useState } from "react";
 
 const Register = ({ setOpenReg }) => {
   /*checkPass = () => {
     /*Checks Password and Repeat Password equality --
   };*/
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+    mail: "",
+    firstName: "",
+    lastName: "",
+  });
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (e) => {
+    const _input = { ...input };
+    _input[e.target.name] = e.target.value;
+    setInput(_input);
+    //console.log(_input);
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password, mail, firstname, lastname } = this.state;
-
-    const user = {
-      username,
-      password,
-      mail,
-      firstname,
-      lastname
-    };
-
     axios
-      .post('http://localhost:3001/postUser', user)
-      .then(() => console.log('User Created'))
-      .catch(err => {
+      .post("http://localhost:8081/postUser", input)
+      .then(() => console.log("User Created"))
+      .catch((err) => {
         console.error(err);
       });
-  };
-
   };
 
   return (
@@ -46,7 +43,7 @@ const Register = ({ setOpenReg }) => {
       >
         X
       </span>
-      <form className="reg-modal-content" onSubmit={this.handleSubmit}>
+      <form className="reg-modal-content" onSubmit={handleSubmit}>
         <div className="reg-container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
@@ -58,8 +55,10 @@ const Register = ({ setOpenReg }) => {
               <input
                 type="text"
                 placeholder="Enter First Name"
-                name="firstname"
+                name="firstName"
                 className="reg-input"
+                /* */
+                onChange={handleChange}
                 required
               />
             </label>
@@ -71,8 +70,10 @@ const Register = ({ setOpenReg }) => {
               <input
                 type="text"
                 placeholder="Enter Last Name"
-                name="lastname"
+                name="lastName"
                 className="reg-input"
+                /* */
+                onChange={handleChange}
                 required
               />
             </label>
@@ -86,6 +87,8 @@ const Register = ({ setOpenReg }) => {
                 placeholder="Enter Username"
                 name="username"
                 className="reg-input"
+                /* */
+                onChange={handleChange}
                 required
               />
             </label>
@@ -97,8 +100,10 @@ const Register = ({ setOpenReg }) => {
               <input
                 type="text"
                 placeholder="Enter Email"
-                name="email"
+                name="mail"
                 className="reg-input"
+                /* */
+                onChange={handleChange}
                 required
               />
             </label>
@@ -110,8 +115,10 @@ const Register = ({ setOpenReg }) => {
               <input
                 type="password"
                 placeholder="Enter Password"
-                name="psw"
+                name="password"
                 className="reg-input"
+                /* */
+                onChange={handleChange}
                 required
               />
             </label>
