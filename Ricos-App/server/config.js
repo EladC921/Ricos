@@ -12,6 +12,7 @@ const config = {
     connectionLimit: env.DB_CONN_LIMIT || 2,
     queueLimit: 0,
     debug: env.DB_DEBUG || false,
+    multipleStatements: true,
   },
   listPerPage: env.LIST_PER_PAGE || 10,
 };
