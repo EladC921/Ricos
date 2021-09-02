@@ -4,7 +4,10 @@ CREATE TABLE Users (
 	password VARCHAR(255) NOT NULL,
 	mail VARCHAR(255) NOT NULL,
 	firstName VARCHAR(55) NOT NULL,
-	lastName VARCHAR(55)
+	lastName VARCHAR(55),
+	numOfRecipes INT DEFAULT 0,
+	numOfFollowers INT DEFAULT 0,
+	numOfFollowing INT DEFAULT 0,
 );
 
 CREATE TABLE Recipe (

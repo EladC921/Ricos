@@ -20,7 +20,7 @@ const ProfilePicture = (props) => {
 }
 
 ProfilePicture.propTypes = {
-    size: PropTypes.oneOf(['sm', 'lr'])
+    size: PropTypes.oneOf(['sm', 'lg'])
 }
 
 ProfilePicture.defaultProps = {
