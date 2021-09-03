@@ -1,0 +1,26 @@
+.msg-container {
+  position: fixed;
+  padding: 3.5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  margin: 16px auto 0 auto;
+  width: 80%;
+  height: 70vh;
+}
+
+.msg-right-chat {
+  width: 70%;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.msg-left-contacts {
+  width: 30%;
+  overflow: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  border: 1px solid black;
+}

@@ -4,7 +4,7 @@ import Main from "./Components/Main";
 import Profile from "./Components/Profile";
 import Explore from "./Components/Explore";
 import Login from "./Components/Login";
-import Messages from "./Components/Messages";
+import Chat from "./Components/Chat";
 
 import "./css/app.css";
 
@@ -18,7 +18,7 @@ const App = () => {
       <Route exact path="/" component={Main} />
       <Route exact path="/profile/:id" component={Profile} />
       <Route exact path="/explore" component={Explore} />
-      <Route exact path="/chat" component={Messages} />
+      <Route exact path="/chat" component={Chat} />
     </div>
   );
 };

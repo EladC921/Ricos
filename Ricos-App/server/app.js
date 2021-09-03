@@ -5,7 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const port = env.PORT || 8081;
 const getRecipeRouter = require("./routes/Recipes/getRecipe");
-const getCheckUserLoginRouter = require("./routes/Users/checkUserLogin");
+const getLoginUserRouter = require("./routes/Users/loginUser");
 const postRecipeRouter = require("./routes/Recipes/postRecipe");
 const postUserRouter = require("./routes/Users/postUser");
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(getRecipeRouter);
-app.use(getCheckUserLoginRouter);
+app.use(getLoginUserRouter);
 
 app.use(postRecipeRouter);
 app.use(postUserRouter);

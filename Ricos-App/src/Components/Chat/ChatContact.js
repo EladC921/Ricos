@@ -1,7 +1,7 @@
-import "../css/messagesContact.css";
-import ProfilePicture from "./ProfilePicture";
+import "../../css/chat-contact.css";
+import ProfilePicture from "../ProfilePicture";
 
-const MessagesContact = (props) => {
+const ChatContact = (props) => {
   //need to be change
   const contactName = props.contactName;
   const lastMsg = props.lastMsg;
@@ -23,4 +23,4 @@ const MessagesContact = (props) => {
   );
 };
 
-export default MessagesContact;
+export default ChatContact;

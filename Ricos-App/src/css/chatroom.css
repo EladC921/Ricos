@@ -1,0 +1,79 @@
+.mainchat {
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  height: 90%;
+}
+
+.chat-txtbox {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.chat-txtbox .txtbox {
+  line-height: 1.5;
+  width: 80%;
+  font-size: 1.5rem;
+  background: lightgray;
+  color: black;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+.sendbtn {
+  width: 20%;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  background-color: #f1a80b;
+}
+
+.sndbtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: #0982fe;
+  align-self: flex-end;
+}
+.received p {
+  background: #0adf03;
+  color: black;
+}
+
+.chat-txt {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}

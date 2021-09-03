@@ -337,3 +337,4 @@ ASALocalRun/
 Ricos-App/run.bat
 Start Ricos.lnk
 Ricos-App/server/.env
+Ricos-App/src/.env
