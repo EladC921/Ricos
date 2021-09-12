@@ -4,12 +4,13 @@ import ricos from "../img/ricos.png";
 import Register from "./Register";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-
 import "../css/login.css";
+import { Redirect, useHistory } from "react-router-dom";
 
 const Login = () => {
-  /* Toggle Register */
-  const [openReg, setRegOpen] = useState(false);
+  // Toggle Register
+  const [openReg, setRegOpen] = useState(false)
+  const history = useHistory();
 
   /* Validation */
   const {
@@ -18,15 +19,22 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     axios
-      .get("http://localhost:8081/checkUserLogin", data)
-      .then((res) => console.log(res))
+      .post("http://localhost:8081/users/login", data)
+      .then((res) => {
+        console.log(res)
+        if (res.status == 200) {
+          localStorage.setItem('jwt', res.data)
+          history.go(0) // refresh page and be re-routed to main
+        }
+      })
       .catch((err) => {
-        console.error(err);
+        console.error(err)
       });
   };
-
+    
   return (
     <>
       <div className="login-main">
