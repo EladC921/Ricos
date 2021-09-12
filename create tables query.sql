@@ -1,10 +1,12 @@
 CREATE TABLE Users (
 	uid INT PRIMARY KEY AUTO_INCREMENT,
-	username VARCHAR(55) NOT NULL,
+	username VARCHAR(55) UNIQUE NOT NULL,
 	password VARCHAR(255) NOT NULL,
-	mail VARCHAR(255) NOT NULL,
+	mail VARCHAR(255) UNIQUE NOT NULL,
 	firstName VARCHAR(55) NOT NULL,
 	lastName VARCHAR(55),
+	profilePic TEXT(1000),
+	bio TEXT,
 	numOfRecipes INT DEFAULT 0,
 	numOfFollowers INT DEFAULT 0,
 	numOfFollowing INT DEFAULT 0,
@@ -12,7 +14,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Recipe (
 	rid INT PRIMARY KEY AUTO_INCREMENT,
-	uid INT,
+	uid INT NOT NULL,
 	date DATETIME NOT NULL,
 	title VARCHAR(255) NOT NULL,
 	description TEXT(1000),
@@ -30,25 +32,25 @@ CREATE TABLE Comment (
 );
 
 CREATE TABLE RecipeLikes(
-	uid INT,
-	rid INT,
+	uid INT NOT NULL,
+	rid INT NOT NULL,
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (rid) REFERENCES Recipe(rid),
 	PRIMARY KEY(uid, rid)
 );
 
 CREATE TABLE CommentLikes (
-	uid INT,
-	cid INT,
+	uid INT NOT NULL,
+	cid INT NOT NULL,
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (cid) REFERENCES Comment(cid),
 	PRIMARY KEY (uid, cid)
 );
 
 CREATE TABLE CommentsOnRecipes (
-	uid INT,
-	cid INT,
-	rid INT,
+	uid INT NOT NULL,
+	cid INT NOT NULL,
+	rid INT NOT NULL,
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (cid) REFERENCES Comment(cid),
 	FOREIGN KEY (rid) REFERENCES Recipe(rid),
@@ -56,8 +58,8 @@ CREATE TABLE CommentsOnRecipes (
 );
 
 CREATE TABLE Follows (
-	uid INT,
-	followerId INT,
+	uid INT NOT NULL,
+	followerId INT NOT NULL,
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (followerId) REFERENCES Users(uid),
 	date DATETIME NOT NULL
