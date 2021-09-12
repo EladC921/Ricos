@@ -5,11 +5,16 @@ import axios from "axios";
 
 const Main = () => {
     const [recipes, setRecipes] = useState([{}]);
-    const id = 2 // this will be replaced with user id from the cookie (global context)
+    const jwt = localStorage.getItem('jwt')
 
     const fetchRecipes = () => {
         axios
-            .get(`http://localhost:8081/users/${id}/main`)
+            .get(`http://localhost:8081/users/main`
+                , {
+                    headers: {
+                        "Authorization": "Bearer " + jwt
+                    }
+                })
             .then((res) => {
                 console.log(res.data.result)
                 setRecipes(res.data.result)
