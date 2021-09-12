@@ -6,7 +6,7 @@ async function checkUserLogin(usernameOrMail, password) {
     [usernameOrMail, usernameOrMail, password]
   );
 
-  return result.length != 0;
+  return result[0]
 }
 
 module.exports = {
