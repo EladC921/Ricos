@@ -7,13 +7,22 @@ import ProfilePicture from './ProfilePicture'
 const Profile = (props) => {
     const [userInfo, setUserInfo] = useState([])
     const [recipes, setRecipes] = useState([])
-    const id = props.match.params.id
+    const uid = props.match.params.uid
+    const jwt = localStorage.getItem('jwt')
+
+    const headers = {
+        "Authorization": "Bearer " + jwt,
+    }
+
+    const config = {
+        headers: headers
+    }
 
     const fetchUserInfo = () => {
         axios
-            .get(`http://localhost:8081/users/${id}`)
+            .get(`http://localhost:8081/users/${uid}`, config)
             .then((res) => {
-                console.log(res.data.result[0])
+                //console.log(res.data.result[0])
                 if (res.data.result[0])
                     setUserInfo(res.data.result[0])
                 else
@@ -26,14 +35,42 @@ const Profile = (props) => {
 
     const fetchUserRecipes = () => {
         axios
-            .get(`http://localhost:8081/users/${id}/recipes`)
+            .get(`http://localhost:8081/users/${uid}/recipes`)
             .then((res) => {
-                console.log(res.data.result)
+                //console.log(res.data.result)
                 setRecipes(res.data.result)
             })
             .catch((err) => {
                 console.error(err)
             })
+    }
+
+    const followUser = () => {
+        const data = {
+            uid: uid
+        }
+
+        if (!userInfo.following) { // follow
+            axios
+                .post(`http://localhost:8081/users/follow`, data, config)
+                .then((res) => {
+                    //console.log(res)
+                    fetchUserInfo()
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
+        } else { // unfollow
+            axios
+                .delete(`http://localhost:8081/users/unfollow`, { data, headers })
+                .then((res) => {
+                    fetchUserInfo()
+                    //console.log(res)
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
+        }
     }
 
     useEffect(() => {
@@ -44,7 +81,7 @@ const Profile = (props) => {
     if (userInfo == -1)
         return (
             <div className="profile-container">
-                <div style={{textAlign: "center"}}>
+                <div style={{ textAlign: "center" }}>
                     User does not exist
                 </div>
             </div>
@@ -65,7 +102,9 @@ const Profile = (props) => {
                             </div>
 
                             <div className="profile-follow">
-                                <button className="follow-button">Follow</button>
+                                <button className="follow-button" onClick={followUser}>
+                                    {userInfo?.following ? "Unfollow" : "Follow"}
+                                </button>
                             </div>
                         </div>
 
@@ -93,6 +132,7 @@ const Profile = (props) => {
                 <div className="profile-posts">
                     {recipes.map((recipe, i) => {
                         return <ProfileMiniPost
+                            key={i}
                             postId={recipe.rid}
                             title={recipe.title}
                             img={recipe.img}
