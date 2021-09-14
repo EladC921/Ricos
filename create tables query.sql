@@ -62,5 +62,6 @@ CREATE TABLE Follows (
 	followerId INT NOT NULL,
 	FOREIGN KEY (uid) REFERENCES Users(uid),
 	FOREIGN KEY (followerId) REFERENCES Users(uid),
+	PRIMARY KEY (uid, followerId),
 	date DATETIME NOT NULL
 );

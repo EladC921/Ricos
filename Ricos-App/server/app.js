@@ -15,6 +15,8 @@ const getUserMainRecipesRouter = require("./routes/Users/getMainRecipes");
 const getUserRouter = require("./routes/Users/getUser");
 const getCheckUserLoginRouter = require("./routes/Users/checkUserLogin");
 const postUserRouter = require("./routes/Users/postUser");
+const postFollowUser = require("./routes/Users/follow")
+const deleteUnfollowUser = require("./routes/Users/unfollow")
 
 const app = express();
 app.use(cors());
@@ -39,6 +41,10 @@ app.use(getUserRouter)
 app.use(getCheckUserLoginRouter);
 // /users/post
 app.use(postUserRouter);
+// /users/follow
+app.use(postFollowUser)
+// /users/unfollow
+app.use(deleteUnfollowUser)
 
 app.listen(port, () => {
   console.log("Server is Listening");

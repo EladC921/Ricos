@@ -1,17 +1,23 @@
 const express = require("express");
+const { validateToken } = require("../../services/auth");
+const { getUser } = require("../../services/Users/getUser");
 const router = express.Router();
-const getUser = require("../../services/Users/getUser");
 
-router.get("/users/:uid/", async function (req, res, next) {
+router.get("/users/:uid/", validateToken, async function (req, res, next) {
     try {
-        const uid = req.params.uid;
+        const uid = req.params.uid
+        // requesting uid (the user the is requesting the info)
+        let ruid = (req.user) ? req.user.uid : "NULL"
 
         if (!uid)
-            res.json("You forgot to add something!");
+            res.status(400).send("Missing uid")
         else
-            res.json(await getUser.getUser(uid));
+            await getUser(ruid, uid)
+            .then((data) => {
+                res.json(data)
+            })
     } catch (err) {
-        console.error(`Error while getting recipe`, err.message);
+        console.error(`Error getting recipe`, err.message);
         next(err);
     }
 });

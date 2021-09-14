@@ -22,7 +22,7 @@ const App = () => {
         </Switch>*/}
           <Route component={Header} />
           <Route exact path="/" component={Main} />
-          <Route exact path="/profile/:id" component={Profile} />
+          <Route exact path="/profile/:uid" component={Profile} />
           <Route exact path="/explore" component={Explore} />
           <Route exact path="/chat" component={Messages} />
         </Router>
