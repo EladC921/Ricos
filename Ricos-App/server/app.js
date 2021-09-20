@@ -8,6 +8,8 @@ const port = env.PORT || 8081;
 /* Recipes */
 const getRecipeRouter = require("./routes/Recipes/getRecipe");
 const postRecipeRouter = require("./routes/Recipes/postRecipe");
+const postLikeRecipeRouter = require("./routes/Recipes/like");
+const deleteUnlikeRecipeRouter = require("./routes/Recipes/unlike");
 
 /* Users */
 const getUserRecipesRouter = require("./routes/Users/getRecipes");
@@ -15,8 +17,8 @@ const getUserMainRecipesRouter = require("./routes/Users/getMainRecipes");
 const getUserRouter = require("./routes/Users/getUser");
 const getCheckUserLoginRouter = require("./routes/Users/checkUserLogin");
 const postUserRouter = require("./routes/Users/postUser");
-const postFollowUser = require("./routes/Users/follow")
-const deleteUnfollowUser = require("./routes/Users/unfollow")
+const postFollowUserRouter = require("./routes/Users/follow")
+const deleteUnfollowUserRouter = require("./routes/Users/unfollow")
 
 const app = express();
 app.use(cors());
@@ -29,6 +31,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(getRecipeRouter);
 // /recipes/post
 app.use(postRecipeRouter);
+// /recipes/like
+app.use(postLikeRecipeRouter);
+// /recipes/unlike
+app.use(deleteUnlikeRecipeRouter);
 
 /* Users */
 // /users/:uid/recipes
@@ -42,9 +48,9 @@ app.use(getCheckUserLoginRouter);
 // /users/post
 app.use(postUserRouter);
 // /users/follow
-app.use(postFollowUser)
+app.use(postFollowUserRouter)
 // /users/unfollow
-app.use(deleteUnfollowUser)
+app.use(deleteUnfollowUserRouter)
 
 app.listen(port, () => {
   console.log("Server is Listening");

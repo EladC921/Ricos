@@ -2,6 +2,7 @@ import Post from "./Post";
 import "../css/main.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_API_URL } from "../consts";
 
 const Main = () => {
     const [recipes, setRecipes] = useState([{}]);
@@ -9,7 +10,7 @@ const Main = () => {
 
     const fetchRecipes = () => {
         axios
-            .get(`http://localhost:8081/users/main`
+            .get(BASE_API_URL + "/users/main"
                 , {
                     headers: {
                         "Authorization": "Bearer " + jwt
@@ -31,6 +32,7 @@ const Main = () => {
     return (
         <div class="container-main">
             {recipes.map((recipe, i) => {
+                console.log(recipe.liked)
                 return (
                     <Post
                         key={i}
@@ -39,10 +41,11 @@ const Main = () => {
                         authorName={recipe.fullName}
                         postId={recipe.rid}
                         img={recipe.img}
-                        likes={recipe.numOfLikes}
+                        numOfLikes={recipe.numOfLikes}
                         description={recipe.description}
+                        liked={recipe.liked}
                     />
-                );
+                )
             })}
         </div>
     );

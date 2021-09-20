@@ -1,23 +1,67 @@
 import '../css/post.css';
 import ProfilePicture from './ProfilePicture';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComment, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faPaperPlane, faHeart as faHeartEmpty } from '@fortawesome/free-regular-svg-icons';
+import { } from '@fortawesome/free-regular-svg-icons';
+import { faEllipsisV, faHeart as faHeartFilled } from '@fortawesome/free-solid-svg-icons';
 import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import Comment from './Comment';
+import axios from 'axios';
+import { BASE_API_URL } from '../consts';
+import { useEffect, useState } from 'react';
 
 const Post = (props) => {
+    const [likedState, setLikedState] = useState() // true if liked by current user
+    const [numOfLikesState, setNumOfLikesState] = useState()
+
     const postId = props.postId
     const authorId = props.authorId
     const title = props.title
     const authorName = props.authorName
     const img = props.img
-    const likes = props.likes
+    const numOfLikes = numOfLikesState ? numOfLikesState : props.numOfLikes
     const description = props.description
+    const liked = likedState ? likedState : (props.liked == 1)
+
+    const jwt = localStorage.getItem('jwt')
+
+    const headers = {
+        "Authorization": "Bearer " + jwt,
+    }
 
     const like = () => {
-        alert("like post #" + postId)
+        if (!liked) { // like
+            axios
+                .post(BASE_API_URL + "/recipes/like", { rid: postId }, { headers })
+                .then((res) => {
+                    if (res.status == 200) {
+                        console.log("liked post " + postId)
+                        setNumOfLikesState(numOfLikes + 1)
+                        setLikedState(true)
+                    } else
+                        console.error("error liking post " + postId)
+                }).catch((err) => {
+                    console.error(err)
+                })
+        } else { // unlike
+            const data = {
+                rid: postId
+            }
+            axios
+                .delete(BASE_API_URL + "/recipes/unlike", { data, headers })
+                .then((res) => {
+                    if (res.status == 200) {
+                        console.log("unliked post " + postId)
+                        setNumOfLikesState(numOfLikes - 1)
+                        setLikedState(false)
+                    } else
+                        console.error("error unliking post " + postId)
+                }).catch((err) => {
+                    console.error(err)
+                })
+        }
+
     }
 
     const comment = () => {
@@ -29,7 +73,23 @@ const Post = (props) => {
     }
 
     const unfollow = () => {
-        alert("unfollow " + authorName)
+        const headers = {
+            "Authorization": "Bearer " + jwt,
+        }
+        const data = {
+            uid: authorId
+        }
+        axios
+            .delete(`http://localhost:8081/users/unfollow`, { data, headers })
+            .then((res) => {
+                if (res.status == 200)
+                    alert(`Unfollowed ${authorName} successfully`)
+                else
+                    alert(`Error unfollowing ${authorName}`)
+            })
+            .catch((err) => {
+                console.error(err)
+            })
     }
 
     const reportPost = () => {
@@ -84,13 +144,13 @@ const Post = (props) => {
 
             <div className="post-footer">
                 <div className="post-actions">
-                    <FontAwesomeIcon icon={faHeart} size="lg" onClick={like} />
+                    <FontAwesomeIcon icon={liked ? faHeartFilled : faHeartEmpty} size="lg" onClick={like} color={liked ? "red" : "black"} />
                     <FontAwesomeIcon icon={faComment} size="lg" onClick={comment} />
                     <FontAwesomeIcon icon={faPaperPlane} size="lg" onClick={share} />
                 </div>
 
                 <div className="post-likes">
-                    {parseInt(likes).toLocaleString()} likes
+                    {parseInt(numOfLikesState ? numOfLikesState : numOfLikes).toLocaleString()} likes
                 </div>
 
                 <div className="post-description">
@@ -107,8 +167,8 @@ const Post = (props) => {
             <div className="post-add-comment">
                 <input class="add-comment-input" type="text" placeholder="Add a comment" onKeyDown={keyPressed}></input>
             </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Post;
