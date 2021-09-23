@@ -9,7 +9,7 @@ CREATE TABLE Users (
 	bio TEXT,
 	numOfRecipes INT DEFAULT 0,
 	numOfFollowers INT DEFAULT 0,
-	numOfFollowing INT DEFAULT 0,
+	numOfFollowing INT DEFAULT 0
 );
 
 CREATE TABLE Recipe (
